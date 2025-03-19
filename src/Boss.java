@@ -1,4 +1,8 @@
 import java.util.Random;
+import WorldRPG.item;
+package WorldRPG;
+import WorlRPG.Character;
+import WorldRPG;
 
 public class Boss extends Enemy {
 
@@ -20,7 +24,7 @@ public class Boss extends Enemy {
         }
 
         boolean useUltraAttack = rand.nextBoolean();
-        double damageDealt;
+        float damageDealt;
 
         if (useUltraAttack && ultrasLeft > 0) {
             damageDealt = getAttackPower() * 5;
@@ -46,9 +50,7 @@ public class Boss extends Enemy {
         return name;
     }
 
-    public void setName (String name){
-        this.setName(name);
-    }
+
 
     public void info(){
         System.out.println("Boss's name:" + getName() + "Health: " + getHealth() + "Attack Power: " + getAttackPower() + "Ultras Left: " + ultrasLeft );

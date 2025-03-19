@@ -1,4 +1,7 @@
-import World.item;
+import WorldRPG.item;
+package WorldRPG;
+import WorlRPG.Character;
+import WorldRPG;
 
 import java.util.ArrayList;
 import java.util.Random;
