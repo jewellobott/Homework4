@@ -3,7 +3,6 @@ import java.util.*;
 
 
 
-
 public class Enemy extends Character {
     private String name;
     private int magicPoints;

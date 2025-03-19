@@ -6,11 +6,13 @@ package WorldRPG;
 //wipe everything and rewrite - 3.18.2025
 public class Character {
     private float health;
-    private int mana;
+    private int damage;
+    private int attackPower;
 
-    public Character(int health, int mana) {
+    public Character(float health, int damage, int attackPower) {
         this.health = health;
-        this.mana = mana;
+        this.damage = damage;
+        this.attackPower = attackPower;
     }
 
     public void consumeItem(item item) {
@@ -19,17 +21,27 @@ public class Character {
                 this.health += item.getEffectValue();
                 System.out.println(item.getName() + "Potion consumed! Health increased by " + item.getEffectValue());
                 break;
-            case "mana":
-                this.mana += item.getEffectValue();
-                System.out.println(item.getName() + " consumed! Mana increased by " + item.getEffectValue());
+            case "damage":
+                this.damage += item.getEffectValue();
+                System.out.println(item.getName() + "Potion consumed! Oh no! It's poison! Health decreaseed by " + item.getEffectValue());
                 break;
-            default:
-                System.out.println("Unknown item type.");
+
+        }
+    }
+    public void attack (Enemy enemy) {
+        System.out.println("Nice hit!" + attackPower + "of damage!");
+        enemy.takeDamage(attackPower);
+    }
+    public void takeDamage(int damage) {
+        this.health -= damage;
+        System.out.println("Ouch!" + damage + " damage. Remaining health: " + this.health);
+        if (this.health <= 0) {
+            System.out.println("Game over!");
         }
     }
 
     public void displayStats() {
-        System.out.println("Health: " + health + " | Mana: " + mana);
+        System.out.println("Health: " + health + " | Damage: " + damage);
     }
     public float getHealth() {
         return health;
