@@ -1,4 +1,4 @@
-package World;// world dimensions: 2500*2000 - 3.10.2025
+package WorldRPG;// world dimensions: 2500*2000 - 3.10.2025
 // world dimensions: changed to 800*1200*400 - 3.11.2025
 // skeleton code copied from PracticeRPG - 3.11.2025
 // setting up directions for travel - 3.17.2025

@@ -6,7 +6,6 @@ import WorlRPG.Character;
 import WorldRPG;
 
 
-
 public class Enemy extends Character {
     private String name;
     private int magicPoints;
