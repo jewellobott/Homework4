@@ -47,11 +47,11 @@ public class Boss extends Enemy {
     }
 
     public void setName (String name){
-        this.name = name;
+        this.setName(name);
     }
 
     public void info(){
-        System.out.println("Boss's name:" + getName() + "Health: " + health +  );
+        System.out.println("Boss's name:" + getName() + "Health: " + getHealth() + "Attack Power: " + getAttackPower() + "Ultras Left: " + ultrasLeft );
     }
     //Info():*
 }

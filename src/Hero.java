@@ -1,3 +1,5 @@
+import World.item;
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.List;
@@ -8,7 +10,7 @@ public class Hero extends Character {
     private int level;
     private int experience;
     private float money;
-    private List<Item> inventory;
+    private List<item> inventory;
     private String name;
 
 
@@ -19,7 +21,7 @@ public class Hero extends Character {
         this.experience = 0;
         this.money = 0.0f;
         this.inventory = new ArrayList<>(5);
-        this.inventory.add(new Item("Potion", 100));
+        this.inventory.add(new item("Potion", 100));
     }
 
 
@@ -47,7 +49,7 @@ public class Hero extends Character {
 
             public void useItem ( int index){
                 if (index >= 0 && index < inventory.size) {
-                    Item item = inventory.get(index);
+                    item item = inventory.get(index);
                     setHealth(getHealth() + item.getHealingPower());
                     System.out.println(getName() + "was  healed by " + item.getName() + " You were healed " + healingPower + " HP");
                     inventory.remove(index);
@@ -74,7 +76,7 @@ public class Hero extends Character {
 
         }
 
-        public boolean addToInventory(Item item) {
+        public boolean addToInventory(item item) {
             for (int i = 0; i < inventory.size; i++) {
                 if (inventory.get(i) == null) {
                     inventory.set(i, item);
@@ -143,7 +145,7 @@ public class Hero extends Character {
             this.money = money;
         }
 
-        public List<Item> getInventory() {
+        public List<item> getInventory() {
             return inventory;
         }
 
