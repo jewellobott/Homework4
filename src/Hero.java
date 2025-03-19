@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.List;
-import //item!!
+
+//import //item!!
 
 public class Hero extends Character {
     private int level;
@@ -159,7 +160,8 @@ public class Hero extends Character {
             System.out.println("Hero's name:" + getName() + " Health: " + getHealth() + " Attack Power: " + getAttackPower() + " Level: " + getLevel() + " Experience: " + getExperience() + " Money: " + getMoney());
 
         }
-        // is this right to just put here!!!??
+
+
 
 
 }
