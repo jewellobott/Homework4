@@ -1,10 +1,16 @@
 import java.util.Random;
+import java.util.*;
+import Character;
+import Item;
+import Hero;
+
+
 
 public class Enemy extends Character {
     private String name;
     private int magicPoints;
 
-    public Enemy(String name, float health,float attackPower, boolean isAlive ) {
+    public Enemy(float health,float attackPower, boolean isAlive ) {
         super(health, attackPower, isAlive);
         this.magicPoints = 30;
     }
@@ -25,15 +31,21 @@ public class Enemy extends Character {
         }
 
         boolean useMagicalAttack = rand.nextBoolean();
-        double damageDealt;
+        float damageDealt;
 
         if (useMagicalAttack && magicPoints >= 15) {
             damageDealt = getAttackPower() * 3;
             magicPoints -= 15;
-            System.out.println("MAGICAL ATTACK ACTIVATED! Enemy has dealt " + damageDealt + " damage to " + hero.getName())
+            System.out.println("MAGICAL ATTACK ACTIVATED! Enemy has dealt " + damageDealt + " damage to " + hero.getName());
+            hero.setHealth(hero.getHealth() - damageDealt);
+            System.out.println("Your health is now at " + hero.getHealth());
+            return true;
         } else {
-
+            damageDealt = getAttackPower();
             System.out.println("Enemy dealt " + damageDealt + " damage to " + hero.getName());
+            hero.setHealth(hero.getHealth() - damageDealt);
+            System.out.println("Your health is now at " + hero.getHealth());
+            return false;
         }
 
     }
@@ -49,7 +61,7 @@ public class Enemy extends Character {
                 return magicPoints;
             }
 
-            public int setMagicPoints ( int magicPoints){
+            public void setMagicPoints ( int magicPoints){
                 this.magicPoints = magicPoints;
             }
 
@@ -67,7 +79,7 @@ public class Enemy extends Character {
         }
 
         public void info() {
-        System.out.println("Enemy's name:" + getName() + " Health: " + getHealth() + " Attack Power: " + getAttackPower());
+        System.out.println("Enemy's name:" + getName() + " Health: " + getHealth() + " Attack Power: " + getAttackPower() + " Magic Points: " + magicPoints);
 
     }
     }
