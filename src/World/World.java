@@ -18,7 +18,7 @@ public class World {
             this.info = info;
         }
     }
-    public static void main(String[] args) {
+    public World() {
         String name, locationchoice;
         float task;
 
