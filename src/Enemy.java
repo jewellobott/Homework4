@@ -1,9 +1,9 @@
 import java.util.Random;
 import java.util.*;
 import WorldRPG.item;
+import WorldRPG.Character;
+import WorldRPG.World;
 package WorldRPG;
-import WorlRPG.Character;
-import WorldRPG;
 
 
 public class Enemy extends Character {
